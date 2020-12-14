@@ -27,3 +27,30 @@ Zusätzlich zu den Wifidaten kann man auch weitere Parameter abfragen. Z.B.: MQT
 PubSubClient ermöglicht senden und empfangen von MQTT Nachrichten.
 Im Beispiel wird der Verbindungsaufbau in setup gamacht. Besser wäre noch, den Verbingungsaufbau asynchron im loop zu machen. 
 Damit startet das System schneller und kann bei Verbindungsabbruch auch neu connecten.
+
+## Server
+
+### MQTT
+
+Als MQTT Server eignet sich mosquito sehr gut. Es ist in Linux sehr einfach zu installieren und kann erst mal ohne weitere Konfiguration genutzt werden.
+
+### InfluxDB
+
+[InfluxDB](https://www.influxdata.com/) ist eine spezielle Zeitreihendatenbank. Die Installation sollte ebenfalls recht einfach per Paketmanager erfolgen.
+
+### Chronograph
+
+[Chronograph](https://www.influxdata.com/time-series-platform/chronograf/) ist eine Visualisierung für Zeitreihen und erlaubt, ansprechende Dashboards zu gestalten.
+
+### Node Red
+
+Mit [Node Red](https://nodered.org/) können die MQTT Nachrichten empfangen und in InfluxDB geschrieben werden.
+
+## Cloud
+
+Alternativ zur Installation auf dem eigenen Server könnte InfluxDB und Chronograph auch in der Cloud betrieben werden. 
+Der Einstieg ist kostenlos und damit vielleicht die schnellste Lösung. 
+
+## Alternative zu MQTT
+
+Alternativ zu MQTT Nachrichten kann man die Messwerte auch direkt in InfluxDB hochladen. Das würde die Infrastruktur einfacher machen, aber auch weniger flexibel.
